@@ -1,0 +1,28 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+.wrapper{
+	width: 100%;
+	background-color: #f8f8f8;
+	text-align: center;
+	line-height: 50px;
+}
+.main-table{
+	border: 2px solid #aaaaaa;
+	width: 80%;
+	margin:10px auto;
+	padding: 1%;
+}
+.btn-link{
+	padding: 15px;
+	background-color: #cccccc;
+	text-decoration: none;
+	color: #000000;
+	border-radius:5px;
+	display: inline-block; 
+	margin-bottom: 10px;
+}
+.btn-link:hover{
+	background-color: #aaaaaa;
+}

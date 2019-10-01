@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Information</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h2>Day 1 - JavaScript Object</h2>
+		<hr>
+		<div class="my-info">
+			<strong>Name:</strong> <span id="my-name"></span><br/>
+			<strong>College:</strong> <span id="my-college"></span><br/>
+			<strong>Address:</strong> <br/>
+				<ul>
+					<li>Temporary Address:  <span id="temp-address"></span></li>
+					<li>Permanent Address:  <span id="per-address"></span></li>
+				</ul>
+			<strong>Hobbies:</strong> <br/>
+				<span id="hobbies"></span><br/>
+			<strong>Education: </strong> 
+				<span id="education"></span>
+			<br>
+			<a href="http://aakritsubedi.com.np" class="btn-link" title="Click me to redirect to my personal website.">Know more about AAkrit</a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var aakrit = {
+		name: 'Aakrit Subedi',
+		college: 'Kantipur Engineering College',
+		address: ['Basundhara','Jhapa'],
+		hobbies: ['Hiking','Travelling','PC Games'],
+		education: ['B.E (Computer)','+2 Physics','SLC']
+	}
+
+	document.getElementById("my-name").innerHTML = aakrit.name;
+	document.getElementById("my-college").innerHTML = aakrit.college;
+	document.getElementById("temp-address").innerHTML = aakrit.address[0];
+	document.getElementById("per-address").innerHTML = aakrit.address[1];
+	aakrit.hobbies.forEach(printHobbies);
+
+	function printHobbies(item, index) {
+		document.getElementById("hobbies").innerHTML +=  item + ", ";
+	}
+	aakrit.education.forEach(printEducation);
+
+	function printEducation(item, index) {
+		document.getElementById("education").innerHTML +=  item + ", ";
+	}
+	console.log(aakrit);
+
+</script>
+</html>
