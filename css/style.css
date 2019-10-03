@@ -26,3 +26,76 @@
 .btn-link:hover{
 	background-color: #aaaaaa;
 }
+
+.clearfix{
+    display: table;
+    content: " ";
+    clear: both;
+}
+/* Images Slider */
+
+@import(https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.carousel-container{
+	/* border: 5px solid #dd55dd; */
+	position: relative;
+	overflow: hidden;
+}
+
+
+.carousel-container .carousel-image-wrapper{
+	height: 500px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.carousel-image-wrapper img{
+	height: 100%;
+	float: left;
+}
+
+.controller-box{
+	height: 50px;
+	width: 25%;
+	background-color: #cccccc;
+	color: brown;
+	margin:10px auto;
+	border-radius: 50px;
+	position: relative;
+}
+.ltArrow{
+	line-height:30px;
+	height: 30px;
+	width: 30px;
+	margin:10px 0;
+	left: 3%;
+	display:inline-block;
+	/* float: left; */
+	font-weight: bolder;
+	font-size: 28px;
+	/* border:none; */
+	border-radius: 15px;
+	position: absolute;
+}
+.rtArrow{
+	line-height:30px;
+	margin:10px 0;
+	height: 30px;
+	width: 30px;
+	margin-right: 1%;
+	display:inline-block;
+	/* float: left; */
+	font-weight: bolder;
+	font-size: 28px;
+	/* border:none; */
+	border-radius: 15px;
+	right: 0px;
+	position: absolute;
+}
+.indicator{
+	display: inline-block;
+	left: 33%;
+	position: absolute;
+	
+}

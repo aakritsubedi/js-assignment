@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bouncing Ball</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Day 2 - Ploting Coordinates & Bouncing Ball</h1>
+        <hr>
+        <div id="point-plot" style="height:200px;width:100%;">
+
+        </div>
+        <hr>
+        <div id="playground" style="height:370px;width:100%; position: relative;">
+            
+        </div>
+    </div>
+</body>
+<script>
+    var points=[
+        {x: 100, y:200},
+        {x: 110, y:30},
+        {x: 160, y:20},
+        {x: 70, y:60},
+        {x: 180, y:80},
+    ]
+
+    var point_plot = document.getElementById('point-plot');
+    
+    points.forEach(point => {
+
+        var p = document.createElement('p');
+        p.style.position = 'absolute';
+        p.style.top = point.x+ 'px';
+        p.style.left = point.y+ 'px';
+        p.style.width =  '10px';
+        p.style.height =  '10px';
+        p.style.borderRadius =  '50%';
+        p.style.background =  '#d5dd55';
+        
+    
+        point_plot.appendChild(p);
+        
+    });
+
+    
+    //var ball = [0,0];
+
+        var playground = document.getElementById('playground');
+
+        var ball = document.createElement('p');
+        ball.style.position = 'absolute';
+        ball.style.top = '0px';
+        ball.style.left = '50%';
+        ball.style.width =  '50px';
+        ball.style.height =  '50px';
+        ball.style.borderRadius =  '50%';
+        ball.style.background =  '#d5dd55';
+    
+        playground.appendChild(ball);
+
+        var FPS=60;
+        var FRAME_RATE = 1000/FPS;
+        var movement=4;
+        setInterval(function(){ 
+            var top = parseInt(ball.style.top);
+            if(top >= (parseInt(playground.style.height)-(parseInt(ball.style.height)))){
+                movement = -2;
+            }
+            else if(top == 0){
+                movement = 2;
+            }
+            top = top + movement;
+            ball.style.top = top +'px';
+        }, FRAME_RATE);
+</script>
+</html>
