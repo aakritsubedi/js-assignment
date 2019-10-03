@@ -135,8 +135,7 @@ var slideAutomatic = setInterval(function(){
         val=0;
     }
     posX += val;
-    
-},3000);
+},5000);
 
 
 
@@ -153,8 +152,8 @@ rtBtn.onclick = function(){
     }
     else{
         rtBtn.disabled = true;
-        rtBtn.style.background="red";
-        rtBtn.innerHTML = "-";
+        rtBtn.style.background='red';
+        rtBtn.innerHTML = '-';
     }
 };
 

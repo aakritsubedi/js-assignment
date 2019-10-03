@@ -40,6 +40,9 @@
 	/* border: 5px solid #dd55dd; */
 	position: relative;
 	overflow: hidden;
+	height: 500px;
+	/* margin: auto; */
+	width: 1428px;
 }
 
 
@@ -53,16 +56,20 @@
 .carousel-image-wrapper img{
 	height: 100%;
 	float: left;
+	width: 1428px;
 }
 
 .controller-box{
 	height: 50px;
-	width: 25%;
-	background-color: #cccccc;
+	width: 500px;
+	background-color: #808080;
 	color: brown;
-	margin:10px auto;
+	margin:auto;
 	border-radius: 50px;
-	position: relative;
+	position: absolute;
+	bottom: 50px;
+	left: 450px;
+	opacity: 0.8;
 }
 .ltArrow{
 	line-height:30px;
@@ -71,10 +78,8 @@
 	margin:10px 0;
 	left: 3%;
 	display:inline-block;
-	/* float: left; */
 	font-weight: bolder;
 	font-size: 28px;
-	/* border:none; */
 	border-radius: 15px;
 	position: absolute;
 }
