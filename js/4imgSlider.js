@@ -122,7 +122,7 @@ var FRAME_LIMIT = 1000/FPS;
                 btn.style.padding='2px 5px';
                 btn.style.background = 'none';
                 btn.style.color = '#7a0707';
-                btn.setAttribute('onclick', `imgChgTo(${i});`);
+                btn.setAttribute('onclick', this.click.indexingPos(${i}));
                 
                 li.appendChild(btn);
                 li.style.listStyle = 'none';
@@ -153,20 +153,46 @@ var FRAME_LIMIT = 1000/FPS;
             var controllerBox = this.parentEle.children[1];
             var ltArrow = controllerBox.children[0];
             var rtArrow = controllerBox.children[1];
+            var indexingBtn = controllerBox.children[2];
+            
             var widthOfImg = this.widthOfImg[0];
-            var index = this.currentIndex;
-            //var that = this;
+            //var index = this.currentIndex;
+            var that = this;
             //console.log(widthOfImg);
 
             var imgWrapperOfThis = controllerBox.parentElement.children[0];
             //console.log(controllerBox);
             console.log(ltArrow,"\n",rtArrow);
             ltArrow.onclick = function(){
-                var chgVal = (index+1)*widthOfImg;
-                //that.currentIndex = that.currentIndex +1;
-                imgWrapperOfThis.style.left= -chgVal +'px';
-                console.log(chgVal);
+                if(that.currentIndex != 4){
+                    var chgVal = (that.currentIndex+1)*widthOfImg;
+                    that.currentIndex = that.currentIndex +1;
+                    imgWrapperOfThis.style.left= -chgVal +'px';
+                    console.log(indexingBtn);
+                    console.log(that.currentIndex);
+                }
+                else{
+                    console.log("Cant Go");
+                }
                 //return chgVal;
+            }
+            rtArrow.onclick = function(){
+                if(that.currentIndex != 0){
+                    var chgVal = (that.currentIndex-1)*widthOfImg;
+                    that.currentIndex = that.currentIndex -1;
+                    imgWrapperOfThis.style.left= chgVal +'px';
+                    console.log(that.currentIndex);
+                }
+                else{
+                    console.log("Cant Go");
+                }
+                //return chgVal;
+            }
+            this.indexingPos = function(index){
+                that.currentIndex = index;
+                var chgVal = (that.currentIndex)*widthOfImg;
+                imgWrapperOfThis.style.left= chgVal +'px';
+                console.log(that.currentIndex);
             }
             this.currentIndex + 1;
             //console.log()
