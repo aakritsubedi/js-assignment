@@ -147,15 +147,28 @@ function indexingPos(index,that){
 
         this.displayFirstImg = function(){
             this.currentIndex=this.startIndex;
-            console.log(this.currentIndex);
+            //console.log(this.currentIndex);
             this.imageWrapper.style.left = -this.currentIndex * this.widthOfImg[this.currentIndex]+'px';
         }
         
         this.autoSlide= function(){
-
-            this.posX =this.imageWrapper.getBoundingClientRect().left;
-            //this.imageWrapper.style.left = '-1366px';
-
+            var that = this;
+            //console.log(that.currentIndex);
+            setInterval(function(){
+                if(that.currentIndex < 4){
+                    move = 1;
+                }
+                else if(that.currentIndex >= 4){
+                    move = -1;
+                }
+                else{
+                    var newVal = 0;
+                }
+            
+            that.imageWrapper.style.left = -(that.currentIndex + move) * that.widthOfImg[that.currentIndex]+'px';
+            that.currentIndex = that.currentIndex + move;
+            //console.log(that.currentIndex);
+            },5000);
         }
 
         
@@ -218,11 +231,11 @@ function indexingPos(index,that){
         }
 
         this.init();
-        setInterval(this.autoSlide(),1000);
+        setInterval(this.autoSlide(),2000);
         this.click();
 
     }
-    new Slider(document.getElementsByClassName('carousel-wrapper')[0],startIndex=1);
+    new Slider(document.getElementsByClassName('carousel-wrapper')[0],startIndex=0);
     new Slider(document.getElementsByClassName('carousel-wrapper')[1],startIndex=3);
     new Slider(document.getElementsByClassName('carousel-wrapper')[2],startIndex=4);
     new Slider(document.getElementsByClassName('carousel-wrapper')[3],startIndex=2);
