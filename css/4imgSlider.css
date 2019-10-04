@@ -1,0 +1,56 @@
+*{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.clearfix{
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+
+ .controller-box{
+	height: 50px;
+	width: 500px;
+	background-color: #808080;
+	margin:auto;
+	border-radius: 50px;
+    position: relative; 
+    /* top:-25%;  */
+    bottom: -75%;
+	opacity: 0.7;
+} 
+.ltArrow{
+	line-height:30px;
+	height: 30px;
+	width: 30px;
+	margin:10px 0;
+	left: 3%;
+	display:inline-block;
+	font-weight: bolder;
+	font-size: 28px;
+	border-radius: 15px;
+	position: absolute;
+}
+.rtArrow{
+	line-height:30px;
+	margin:10px 0;
+	height: 30px;
+	width: 30px;
+	margin-right: 1%;
+	display:inline-block;
+	
+	font-weight: bolder;
+	font-size: 28px;
+	
+	border-radius: 15px;
+	right: 0px;
+	position: absolute;
+}
+.indicator{
+	display: inline-block;
+	left: 40%;
+	position: absolute;
+	
+}
