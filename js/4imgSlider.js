@@ -2,7 +2,8 @@ var div = document.createElement('div');
 
 
 var FPS=60;
-var FRAME_LIMIT = 1000/FPS;
+var FRAME_RATE =1000;
+//var FRAME_LIMIT = FRAME_RATE/FPS; 
 
 function indexingPos(index,that){
     console.log(index);
@@ -18,7 +19,9 @@ function indexingPos(index,that){
 ;(function(){
 
     //slider
-    function Slider(parentEle,startIndex){
+    function Slider(parentEle,startIndex,fps){
+        this.fps = fps;
+        this.FRAME_LIMIT = FRAME_RATE/fps;
         this.parentEle = parentEle;
         //images
         this.images = null;
@@ -168,7 +171,7 @@ function indexingPos(index,that){
             that.imageWrapper.style.left = -(that.currentIndex + move) * that.widthOfImg[that.currentIndex]+'px';
             that.currentIndex = that.currentIndex + move;
             //console.log(that.currentIndex);
-            },5000);
+            },100000/this.fps);
         }
 
         
@@ -235,8 +238,8 @@ function indexingPos(index,that){
         this.click();
 
     }
-    new Slider(document.getElementsByClassName('carousel-wrapper')[0],startIndex=0);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[1],startIndex=3);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[2],startIndex=4);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[3],startIndex=2);
+    new Slider(document.getElementsByClassName('carousel-wrapper')[0],startIndex=0,fps=60);
+    new Slider(document.getElementsByClassName('carousel-wrapper')[1],startIndex=3,fps=120);
+    new Slider(document.getElementsByClassName('carousel-wrapper')[2],startIndex=4,fps=120);
+    new Slider(document.getElementsByClassName('carousel-wrapper')[3],startIndex=2,fps=60);
 })();
