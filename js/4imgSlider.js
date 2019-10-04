@@ -4,6 +4,17 @@ var div = document.createElement('div');
 var FPS=60;
 var FRAME_LIMIT = 1000/FPS;
 
+function indexingPos(index,that){
+    console.log(index);
+    //console.log(that);
+    console.log(that.parentElement.parentElement.parentElement.parentElement.children[0]);
+
+    // that.currentIndex = index;
+    var chgVal = -(index)*683;
+    that.parentElement.parentElement.parentElement.parentElement.children[0].style.left= chgVal +'px';
+    // console.log(that.currentIndex);
+}
+
 ;(function(){
 
     //slider
@@ -122,7 +133,7 @@ var FRAME_LIMIT = 1000/FPS;
                 btn.style.padding='2px 5px';
                 btn.style.background = 'none';
                 btn.style.color = '#7a0707';
-                btn.setAttribute('onclick', this.click.indexingPos(${i}));
+                btn.setAttribute('onclick', `indexingPos(${i},this)`);
                 
                 li.appendChild(btn);
                 li.style.listStyle = 'none';
@@ -188,13 +199,8 @@ var FRAME_LIMIT = 1000/FPS;
                 }
                 //return chgVal;
             }
-            this.indexingPos = function(index){
-                that.currentIndex = index;
-                var chgVal = (that.currentIndex)*widthOfImg;
-                imgWrapperOfThis.style.left= chgVal +'px';
-                console.log(that.currentIndex);
-            }
-            this.currentIndex + 1;
+            
+            //this.currentIndex + 1;
             //console.log()
         }
 
