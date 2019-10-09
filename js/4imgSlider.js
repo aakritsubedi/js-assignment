@@ -136,7 +136,7 @@ function indexingPos(index,that){
                 btn.style.padding='2px 5px';
                 btn.style.background = 'none';
                 btn.style.color = '#7a0707';
-                btn.setAttribute('onclick', `indexingPos(${i},this)`);
+                btn.setAttribute('onclick', `indexingPos(${i},this.imageWrapper)`);
                 
                 li.appendChild(btn);
                 li.style.listStyle = 'none';
@@ -239,7 +239,4 @@ function indexingPos(index,that){
 
     }
     new Slider(document.getElementsByClassName('carousel-wrapper')[0],startIndex=0,fps=60);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[1],startIndex=3,fps=120);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[2],startIndex=4,fps=120);
-    new Slider(document.getElementsByClassName('carousel-wrapper')[3],startIndex=2,fps=60);
 })();
