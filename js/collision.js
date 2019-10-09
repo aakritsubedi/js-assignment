@@ -123,21 +123,20 @@ class Game{
 
     twoBallCollision(firstBall,secondBall){
 
-        let radiusSum = (firstBall.radius +secondBall.radius)/2;
+        let sumOfradius = (firstBall.radius +secondBall.radius)/2;
         let x1 = firstBall.left + (firstBall.radius/2);
-        let x2 = secondBall.left + (secondBall.radius/2);
         let y1 = firstBall.top + (firstBall.radius/2);
+        let x2 = secondBall.left + (secondBall.radius/2);
         let y2 = secondBall.top + (secondBall.radius/2);
+        //pythagorus theorem 
         let distance = Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2));
 
     
-        if(distance <= radiusSum){
+        if(distance <= sumOfradius){
             firstBall.changeToGreen(secondBall);
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
     }
 
     allCollision(){
