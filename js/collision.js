@@ -19,10 +19,12 @@ class Ball{
 
         this.dx = null;
         this.dy = null;
-        this.radius = 40;
+        this.mass=randomNo(1,1.2);
+        this.radius = this.mass == 1 ? 30 : 45;
         this.ball=null;
         this.left=null;
         this.top=null;
+        
 
         this.boxWidth=null;
     }
@@ -42,9 +44,10 @@ class Ball{
         
         this.parentEle.appendChild(this.ball);
     }
-    direction(a,b){
-        this.dx = 1;
-        this.dy = 1;
+    direction(){
+        console.log(this.mass);
+        this.dx = 1*this.mass;
+        this.dy = 1*this.mass;
     }
     reverseX(ball){
         this.dx *=-1;
@@ -170,5 +173,5 @@ class Game{
     }
 }
 var container = document.getElementById('container');
-var game= new Game(container,15);
+var game= new Game(container,20);
 game.moveBalls();

@@ -40,7 +40,7 @@ class Ant{
         
         this.parentEle.appendChild(this.ant);
     }
-    direction(a,b){
+    direction(){
         this.dx = 1;
         this.dy = 1;
     }
