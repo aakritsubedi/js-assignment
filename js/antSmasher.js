@@ -113,20 +113,20 @@ class Game{
 
     twoAntCollision(firstant,secondant){
 
-        let radiusSum = (firstant.radius +secondant.radius)/2;
-        let x1 = firstant.left + (firstant.radius/2);
-        let x2 = secondant.left + (secondant.radius/2);
-        let y1 = firstant.top + (firstant.radius/2);
-        let y2 = secondant.top + (secondant.radius/2);
+        let sumOfradius = (firstBall.radius +secondBall.radius)/2;
+        let x1 = firstBall.left + (firstBall.radius/2);
+        let y1 = firstBall.top + (firstBall.radius/2);
+        let x2 = secondBall.left + (secondBall.radius/2);
+        let y2 = secondBall.top + (secondBall.radius/2);
+        //pythagorus theorem 
         let distance = Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2));
 
     
-        if(distance <= radiusSum){
+        if(distance <= sumOfradius){
+            firstBall.changeToGreen(secondBall);
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
     }
 
     allCollision(){
