@@ -60,14 +60,14 @@ class Ant{
         this.update();
     }
     checkBorderCollisionX(){
-        if((this.left <= 0 ) || (this.left+(2.3*this.radius))>=(this.boxWidth+this.radius)){
+        if((this.left <= 0 ) || (this.left+(2*this.radius))>=(this.boxWidth+this.radius)){
             return true;
         }
         return false;
         
     }
     checkBorderCollisionY(){
-        if((this.top <= 0 ) || (this.top+(2.3*this.radius))>=(BOXHEIGHT+this.radius)){
+        if((this.top <= 0 ) || (this.top+(2*this.radius))>=(BOXHEIGHT+this.radius)){
             return true;
         }
         return false;

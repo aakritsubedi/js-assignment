@@ -1,5 +1,5 @@
 var BOXHEIGHT = 530;
-var BOXWIDTH = 80;
+var BOXWIDTH = 80;//percentage value,here 80% of total window size
 var FRAME_LIMIT = 1000;
 var FPS = 600;
 var FRAME_RATE = FRAME_LIMIT/FPS;
@@ -66,7 +66,7 @@ class Ball{
     }
     checkBorderCollisionX(){
         //console.log(this.boxWidth);
-        if((this.left <= 0 ) || (this.left+(2.3*this.radius))>=(this.boxWidth+this.radius)){
+        if((this.left <= 0 ) || (this.left+(2*this.radius))>=(this.boxWidth+this.radius)){
             this.ball.style.background = `${COLOR_RED[randomNo(0,6)]}`;
             this.ball.style.border='4px double black';
             return true;
@@ -75,7 +75,7 @@ class Ball{
         
     }
     checkBorderCollisionY(){
-        if((this.top <= 0 ) || (this.top+(2.3*this.radius))>=(BOXHEIGHT+this.radius)){
+        if((this.top <= 0 ) || (this.top+(2*this.radius))>=(BOXHEIGHT+this.radius)){
             this.ball.style.background = `${COLOR_YELLOW[randomNo(0,6)]}`;
             this.ball.style.border='4px solid black';
             return true;
