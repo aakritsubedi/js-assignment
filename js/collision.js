@@ -1,7 +1,7 @@
 var BOXHEIGHT = 530;
 var BOXWIDTH = 80;//percentage value,here 80% of total window size
 var FRAME_LIMIT = 1000;
-var FPS = 600;
+var FPS = 200;
 var FRAME_RATE = FRAME_LIMIT/FPS;
 var COLOR_RED = ['#E44236','#B83227','#D63031','#AE1438','#E83350','#AE1438'];
 var COLOR_YELLOW = ['#EEC213','#F5C469','#F4C724','#F0DF87','#DFAF2B','#FFF222'];
@@ -86,7 +86,7 @@ class Ball{
         return false;
         
     }
-    csheckBorderCollisionY(){
+    checkBorderCollisionY(){
         if((this.top <= 0 ) || (this.top+(2*this.radius))>=(BOXHEIGHT+this.radius)){
             this.changeStyle('solid','green');
             return true;
