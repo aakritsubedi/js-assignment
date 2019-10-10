@@ -64,20 +64,31 @@ class Ball{
         this.top = parseInt(this.top) + this.dy;
         this.update();
     }
+    changeStyle(border,color){
+        this.ball.style.border='4px';
+        this.ball.style.borderStyle = border;
+        
+        if(color == 'red'){
+            this.ball.style.background = `${COLOR_RED[randomNo(0,6)]}`;
+            this.ball.style.borderColor = `${COLOR_GREEN[randomNo(0,6)]}`;
+        }
+        else{
+            this.ball.style.background = `${COLOR_GREEN[randomNo(0,6)]}`;
+            this.ball.style.borderColor = `${COLOR_RED[randomNo(0,6)]}`;
+        }
+    }
     checkBorderCollisionX(){
         //console.log(this.boxWidth);
         if((this.left <= 0 ) || (this.left+(2*this.radius))>=(this.boxWidth+this.radius)){
-            this.ball.style.background = `${COLOR_RED[randomNo(0,6)]}`;
-            this.ball.style.border='4px double black';
+            this.changeStyle('double','red');
             return true;
         }
         return false;
         
     }
-    checkBorderCollisionY(){
+    csheckBorderCollisionY(){
         if((this.top <= 0 ) || (this.top+(2*this.radius))>=(BOXHEIGHT+this.radius)){
-            this.ball.style.background = `${COLOR_YELLOW[randomNo(0,6)]}`;
-            this.ball.style.border='4px solid black';
+            this.changeStyle('solid','green');
             return true;
         }
         return false;
