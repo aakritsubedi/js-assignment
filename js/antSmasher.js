@@ -61,6 +61,7 @@ class Ant{
     }
     checkBorderCollisionX(){
         if((this.left <= 0 ) || (this.left+(2*this.radius))>=(this.boxWidth+this.radius)){
+            //this.ant.style.transform = "rotate(90deg)";
             return true;
         }
         return false;
@@ -68,6 +69,7 @@ class Ant{
     }
     checkBorderCollisionY(){
         if((this.top <= 0 ) || (this.top+(2*this.radius))>=(BOXHEIGHT+this.radius)){
+            //this.ant.style.transform = "rotate(90deg)";
             return true;
         }
         return false;
@@ -111,19 +113,18 @@ class Game{
         }
     }
 
-    twoAntCollision(firstant,secondant){
+    twoAntCollision(firstAnt,secondAnt){
 
-        let sumOfradius = (firstBall.radius +secondBall.radius)/2;
-        let x1 = firstBall.left + (firstBall.radius/2);
-        let y1 = firstBall.top + (firstBall.radius/2);
-        let x2 = secondBall.left + (secondBall.radius/2);
-        let y2 = secondBall.top + (secondBall.radius/2);
+        let sumOfradius = (firstAnt.radius +secondAnt.radius)/2;
+        let x1 = firstAnt.left + (firstAnt.radius/2);
+        let y1 = firstAnt.top + (firstAnt.radius/2);
+        let x2 = secondAnt.left + (secondAnt.radius/2);
+        let y2 = secondAnt.top + (secondAnt.radius/2);
         //pythagorus theorem 
         let distance = Math.sqrt(Math.pow((x1-x2),2) + Math.pow((y1-y2),2));
 
     
         if(distance <= sumOfradius){
-            firstBall.changeToGreen(secondBall);
             return true;
         }
         return false;
