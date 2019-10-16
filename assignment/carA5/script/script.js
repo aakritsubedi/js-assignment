@@ -89,6 +89,7 @@ class Car{
         return this.score;
     }
     playSound(type){
+        
         if(type == 'horn'){
             CAR_AUDIO.src = 'audio/horn.mp3';
         }
