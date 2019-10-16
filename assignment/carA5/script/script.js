@@ -39,7 +39,7 @@ class Car{
             this.moveOpponent();        
         }
         
-        this.car.style.backgroundImage = 'url(\' images/car/'+this.carName+' \')';
+        this.car.style.backgroundImage = 'url(\' images/'+this.carName+' \')';
         //this.car.style.backgroundColor='green';
         this.car.style.backgroundRepeat='no-repeat';
         this.car.style.backgroundSize='contain';
@@ -74,7 +74,7 @@ class Car{
                 top = (this.carLane == 1) ? -50: -350;
                 factor = (this.carLane == 1) ? 2: (this.carLane == 2) ? 3 : 4;
                 this.carName =vechicle[randomNo(3,8)];
-                this.car.style.backgroundImage = 'url(\' images/car/'+this.carName+' \')';
+                this.car.style.backgroundImage = 'url(\' images/'+this.carName+' \')';
                 
                 this.factor = (this.carLane == 1) ? 110 : (this.carLane == 2) ? 135 : 145;
                 this.car.style.left = (this.carLane) * this.factor + 'px';
