@@ -20,7 +20,7 @@ class Ball{
         this.dx = null;
         this.dy = null;
         this.mass=randomNo(1,1.2);
-        this.radius = this.mass == 1 ? 16 : 26;
+        this.radius = this.mass == 1 ? 16 : 30;
         this.ball=null;
         this.left=null;
         this.top=null;

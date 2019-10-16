@@ -31,7 +31,7 @@ class Ant{
         this.ant.style.width = this.radius+'px';
         this.ant.style.borderRadius = '50%';
         //this.ant.style.border='4px dashed black';
-        this.ant.style.position = 'absolute';
+        this.ant.style.position = ' ';
         this.top = this.ant.style.top=randomNo(10,(BOXHEIGHT-2*this.radius))+'px';
         this.top = parseInt(this.top);
         this.left = this.ant.style.left=randomNo(20,(this.boxWidth-2*this.radius))+'px';
@@ -41,8 +41,8 @@ class Ant{
         this.parentEle.appendChild(this.ant);
     }
     direction(){
-        this.dx = 1;
-        this.dy = 1;
+        this.dx = 2;
+        this.dy = 2;
     }
     reverseX(ant){
         this.dx *=-1;
