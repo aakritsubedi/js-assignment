@@ -39,7 +39,7 @@ class Car{
             this.moveOpponent();        
         }
         
-        this.car.style.backgroundImage = 'url(\' ../images/car/'+this.carName+' \')';
+        this.car.style.backgroundImage = 'url(\' images/car/'+this.carName+' \')';
         //this.car.style.backgroundColor='green';
         this.car.style.backgroundRepeat='no-repeat';
         this.car.style.backgroundSize='contain';
@@ -55,7 +55,7 @@ class Car{
     gameOverState(){
         setTimeout(()=>{
             //this.car.style.backgroundImage='none';
-            this.car.style.backgroundImage='url(\'../images/fire.gif\')';
+            this.car.style.backgroundImage='url(\' images/fire.gif\')';
         },100);
         setTimeout(()=>{
             this.car.style.backgroundImage='none';
@@ -74,7 +74,7 @@ class Car{
                 top = (this.carLane == 1) ? -50: -350;
                 factor = (this.carLane == 1) ? 2: (this.carLane == 2) ? 3 : 4;
                 this.carName =vechicle[randomNo(3,8)];
-                this.car.style.backgroundImage = 'url(\' ../images/car/'+this.carName+' \')';
+                this.car.style.backgroundImage = 'url(\' images/car/'+this.carName+' \')';
                 
                 this.factor = (this.carLane == 1) ? 110 : (this.carLane == 2) ? 135 : 145;
                 this.car.style.left = (this.carLane) * this.factor + 'px';
@@ -90,19 +90,19 @@ class Car{
     }
     playSound(type){
         if(type == 'horn'){
-            CAR_AUDIO.src = '../audio/horn.mp3';
+            CAR_AUDIO.src = 'audio/horn.mp3';
         }
         else if(type == 'bump'){
-            CAR_AUDIO.src = '../audio/bump.mp3';
+            CAR_AUDIO.src = 'audio/bump.mp3';
         }
         else if(type == 'brake'){
-            CAR_AUDIO.src = '../audio/brake.wav';
+            CAR_AUDIO.src = 'audio/brake.wav';
         }
         else if(type == 'running'){
-            CAR_AUDIO.src = '../audio/car_running.mp3';            
+            CAR_AUDIO.src = 'audio/car_running.mp3';            
         }
         else if(type == 'attack'){
-            CAR_AUDIO.src = '../audio/attack.mp3';            
+            CAR_AUDIO.src = 'audio/attack.mp3';            
         }
         CAR_AUDIO.play();
     }
