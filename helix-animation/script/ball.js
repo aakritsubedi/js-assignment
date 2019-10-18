@@ -6,6 +6,11 @@ function getRandomColor() {
     }
     return color;
 }
+function randomNo(lower,upper) {
+    let randNo = Math.floor(Math.random() * (upper-lower + 1 ) + lower);
+    return randNo;
+}
+
 class Ball{
     constructor(wrapper,row,x,y){
         this.wrapper = wrapper;
@@ -27,7 +32,7 @@ class Ball{
         //styling div
         ball.style.height = this.height + 'px';
         ball.style.width = this.width + 'px';
-        ball.style.top = this.y + 'px';
+        ball.style.top = (this.y*1.1) + 'px';
         ball.style.left = this.x + 'px';
         ball.style.borderRadius = '50%';
         ball.style.position='absolute';
@@ -37,8 +42,8 @@ class Ball{
     }
     animateBall() {
         //Just to create the number inbetween -1 and 1
-        var no1 = Math.sin(this.val - (this.row/2));
-        var no2 = Math.sin(this.val - (this.row/2));
+        var no1 = Math.cos(this.val - (this.row/2));
+        var no2 = Math.cos(this.val - (this.row/2));
         this.ball.style.transform = `scale(${(no1 > 0) ? (no1) : (no2)})`;
         this.val += 0.025;
     }
