@@ -14,6 +14,9 @@
 	margin:10px auto;
 	padding: 0.2%;
 }
+.main-table tr td{
+	line-height: 22px;
+}
 .btn-link{
 	padding: 15px;
 	background-color: #cccccc;
