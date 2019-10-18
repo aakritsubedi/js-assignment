@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: #000000;
+}
+.wrapper {
+    text-align: center;
+    font-family: cursive;
+    color:#ffffff;
+    padding: 25px;
+}
+.container{
+    /* height:500px; */
+    width: 45%;
+    position: relative;
+    margin: 25px auto;
+}
