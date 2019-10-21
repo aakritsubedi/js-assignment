@@ -31,7 +31,7 @@ class Ant{
         this.ant.style.width = this.radius+'px';
         this.ant.style.borderRadius = '50%';
         //this.ant.style.border='4px dashed black';
-        this.ant.style.position = ' ';
+        this.ant.style.position = 'absolute';
         this.top = this.ant.style.top=randomNo(10,(BOXHEIGHT-2*this.radius))+'px';
         this.top = parseInt(this.top);
         this.left = this.ant.style.left=randomNo(20,(this.boxWidth-2*this.radius))+'px';
@@ -180,5 +180,5 @@ class Game{
     }
 }
 var container = document.getElementById('container');
-var game= new Game(container,15);
+var game= new Game(container,6);
 game.moveAnts();
